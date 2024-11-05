@@ -75,6 +75,8 @@ fi
 # Agent specific things that you want to copy
 # For example, requirements.txt or environment.yml
 # cp -f ${RAI_LEADERBOARD_ROOT}/../requirements.txt .tmp
+cp -r ${RAI_LEADERBOARD_ROOT}/../model_ckpt .tmp
+cp -r ${RAI_LEADERBOARD_ROOT}/../environment.yml .tmp
 
 # build docker image
 docker build --force-rm -t ${TARGET_NAME} -f ${RAI_LEADERBOARD_ROOT}/scripts/Dockerfile .

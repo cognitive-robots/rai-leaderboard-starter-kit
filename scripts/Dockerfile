@@ -77,26 +77,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libgtk2.
 ########################################################################################################################
 ########################################################################################################################
 
-### Example (InterFuser): Agent specific commands
+### Agent specific commands
 
-# COPY .tmp/interfuser /workspace/interfuser
-# COPY .tmp/requirements.txt /workspace/requirements.txt
+COPY .tmp/neat /workspace/neat
+COPY .tmp/environment.yml /workspace/environment.yml
+COPY .tmp/model_ckpt /workspace/model_ckpt
 
-# ENV PYTHONPATH ${PYTHONPATH}:"/workspace/interfuser"
-# ENV TEAM_AGENT ${TEAM_CODE_ROOT}/interfuser_agent.py
-# ENV TEAM_CONFIG ${TEAM_CODE_ROOT}/interfuser_config.py
-# ENV CHALLENGE_TRACK_CODENAME SENSORS
-# ENV RESUME True
-# ENV MODEL_PATH ${TEAM_CODE_ROOT}/interfuser.pth.tar
-
-# /opt/conda/envs/python37/bin/pip install my_package
-# RUN /opt/conda/envs/python37/bin/pip install -r /workspace/requirements.txt
-
-###
-
-ENV TEAM_AGENT ${TEAM_CODE_ROOT}/npc_agent.py
-ENV TEAM_CONFIG ${TEAM_CODE_ROOT}/YOUR_CONFIG_FILE
+ENV PYTHONPATH ${PYTHONPATH}:"/workspace/neat"
+ENV TEAM_AGENT ${TEAM_CODE_ROOT}/neat_agent.py
+ENV TEAM_CONFIG ./model_ckpt/neat
 ENV CHALLENGE_TRACK_CODENAME SENSORS
+ENV RESUME True
+
+RUN /opt/conda/bin/conda env update --name python37 --file /workspace/environment.yml && \
+     /opt/conda/bin/conda install --name python37 pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia && \
+     /opt/conda/bin/conda clean -ya
 
 ########################################################################################################################
 ########################################################################################################################

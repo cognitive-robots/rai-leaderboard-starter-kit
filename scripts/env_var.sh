@@ -1,11 +1,11 @@
 #!/bin/bash
 
-[[ -z "${CARLA_ROOT}" ]]               && export CARLA_ROOT="<Path to your CARLA PythonAPI>"
-[[ -z "${LEADERBOARD_ROOT}" ]]         && export LEADERBOARD_ROOT="<Path to your Carla leaderboard root>"
-[[ -z "${RAI_LEADERBOARD_ROOT}" ]]     && export RAI_LEADERBOARD_ROOT="<Path to your rai leaderboard root>"
-[[ -z "${SCENARIO_RUNNER_ROOT}" ]]     && export SCENARIO_RUNNER_ROOT="<Path to your scenario runner root>"
-[[ -z "${TEAM_CODE_ROOT}" ]]           && export TEAM_CODE_ROOT="<Path to your team_code root>"
-[[ -z "${USER_CODE_ROOT}" ]]           && export USER_CODE_ROOT="<Path to your user code root (e.g., ../interfuser/)>"
+[[ -z "${CARLA_ROOT}" ]]               && export CARLA_ROOT="/home/pratik/carla"
+[[ -z "${LEADERBOARD_ROOT}" ]]         && export LEADERBOARD_ROOT="/home/pratik/code/carla_challenge/neat/leaderboard"
+[[ -z "${RAI_LEADERBOARD_ROOT}" ]]     && export RAI_LEADERBOARD_ROOT="/home/pratik/code/carla_challenge/neat/rai"
+[[ -z "${SCENARIO_RUNNER_ROOT}" ]]     && export SCENARIO_RUNNER_ROOT="/home/pratik/code/carla_challenge/neat/scenario_runner"
+[[ -z "${TEAM_CODE_ROOT}" ]]           && export TEAM_CODE_ROOT="/home/pratik/code/carla_challenge/neat/team_code"
+[[ -z "${USER_CODE_ROOT}" ]]           && export USER_CODE_ROOT="/home/pratik/code/carla_challenge/neat/neat"
 
 
 [[ -z "${CHALLENGE_TRACK_CODENAME}" ]] && export CHALLENGE_TRACK_CODENAME=SENSORS
