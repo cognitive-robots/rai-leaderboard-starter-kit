@@ -16,7 +16,7 @@
 [[ -z "${ROUTES}" ]]                   && export ROUTES=leaderboard/data/routes_devtest.xml # routes
 [[ -z "${SCENARIOS}" ]]                && export SCENARIOS=leaderboard/data/all_towns_traffic_scenarios_public.json # scenarios
 [[ -z "${CHECKPOINT_ENDPOINT}" ]]      && export CHECKPOINT_ENDPOINT=results/result.json # results file
-[[ -z "${SAVE_PATH}" ]]                && export SAVE_PATH=data/eval # path for saving episodes while evaluating
+#[[ -z "${SAVE_PATH}" ]]                && export SAVE_PATH=data/eval # path for saving episodes while evaluating
 [[ -z "${RESUME}" ]]                   && export RESUME=True
 [[ -z "${CUSTOM_ROUTE_TIMEOUT}" ]]     && export CUSTOM_ROUTE_TIMEOUT=370
 [[ -z "${HAS_DISPLAY}" ]]              && export HAS_DISPLAY=0 # set to 1 to enable visualisation. Wrap vis code in `if os.getenv("HAS_DISPLAY") == "1"` check
